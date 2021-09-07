@@ -2,15 +2,15 @@ global-styling:
   version: VERSION
   css:
     theme:
-      css/custom.css: {}
+      assets/css/custom.css: {}
+      https://use.fontawesome.com/releases/v5.6.3/css/all.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css: {}
 
 global-scripts:
   version: VERSION
   js:
-    js/custom.js: {}
-    js/jquery.min.js: {}
-    js/jquery-migrate.min.js: {}
-    js/slick.min.js: {} 
+    assets/js/bundle.js: {}
+
   dependencies:
     - core/jquery
     - core/drupal.dialog.ajax
