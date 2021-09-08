@@ -1,40 +1,40 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const remame = require('gulp-rename')
-const concat = require('gulp-concat');
-const sourcemaps = require('gulp-sourcemaps');
+const { src, dest, watch } = require('gulp');
+const compileSass = require('gulp-sass')(require('sass'));
+const minifyCss = require('gulp-clean-css');
+const sourceMaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const { src, series, parallel, dest, watch } = require('gulp');
+const cleanCss = require('gulp-clean-css');
+const minifyJs = require('gulp-uglify');
+const concat = require('gulp-concat');
 
+compileSass.compiler = require('node-sass');
 
-
-function style() {
-  return src('./scss/**/*.scss')
-  .pipe(sourcemaps.init())
-  .pipe(sass())
-  .pipe(sourcemaps.write())
-  .pipe(sourcemaps.init({loadMaps: true}))
-  .pipe((postcss([autoprefixer('last 2 version', 'ie 8', 'ie 9')])))
-  .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest('css'))
+const bundleSaas = () => {
+    return src('./src/sass/**/*.scss')
+    .pipe(sourceMaps.init())
+    .pipe(compileSass().on('error', compileSass.logError))
+    .pipe(cleanCss())
+    .pipe((postcss([autoprefixer('last 2 version', 'ie 8', 'ie 9')])))
+    .pipe(sourceMaps.write())
+    .pipe(dest('./assets/css'));
 }
 
-function jsTask() {
-  return src('./js/modules/**/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(concat('custom.js'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest('js'));
+const bundleJs = () => {
+    return src('./src/js/**/*.js')
+    .pipe(sourceMaps.init())
+    .pipe(minifyJs())
+    .pipe(concat('bundle.js'))
+    .pipe(sourceMaps.write())
+    .pipe(dest('./assets/js'));
 }
 
-
-function watchTask() {
-  watch(['./scss/**/*.scss', './js/modules/**/*.js'], { interval: 1000 }, parallel(style, jsTask));
+   
+const devWatch = () => {
+    watch('./src/sass/**/*.scss', bundleSaas);
+    watch('./src/js/**/*.js', bundleJs);
 }
-exports.style = style
-exports.jsTask = jsTask
-exports.default = series(
-  parallel(jsTask, style),
-  watchTask
-);
+
+exports.bundleSaas = bundleSaas;
+exports.bundleJs = bundleJs;
+exports.devWatch = devWatch;
