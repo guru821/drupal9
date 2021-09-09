@@ -1,4 +1,16 @@
+// Smooth scrolling
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    font-family: 'AlegreyaSansRegular';
     margin: 0;
     padding: 0;
 }
@@ -11,4 +23,13 @@ body {
 
 .feed-icons {
     display: none;
+}
+
+.view-empty {
+    display: none;
+}
+
+figure {
+    line-height: 0;
+    margin: 0;
 }

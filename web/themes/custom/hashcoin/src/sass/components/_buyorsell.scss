@@ -1,0 +1,35 @@
+// Buy or cell section css start here
+.payment-process-section {
+    background: #F5F5F5;
+    padding: 100px 0;
+    .view-content {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        gap: 50px;
+        text-align: center;
+        .icon-img {
+            width: 200px;
+            margin: auto;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #d3d3d3;
+            border-radius: 50%;
+            border-style: dashed;
+        }
+        h3 {
+            color: #282828;
+            font-family: 'AlegreyaSansBold';
+            font-size: 22px;
+            padding: 34px 0 26px 0;
+        }
+        p {
+            color: #282828;
+            font-family: 'AlegreyaSansRegular';
+            line-height: 1.5;
+        }
+    }
+}

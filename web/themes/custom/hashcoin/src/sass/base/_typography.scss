@@ -1,0 +1,33 @@
+/*
+** Font Face For scifi.
+*/
+
+/*......... Fonts AlegreyaSansBold..........*/
+@font-face {
+  font-family: 'AlegreyaSansBold';
+  src: url('../../src/fonts/AlegreyaSans-Bold.eot');
+  src: url('../../src/fonts/AlegreyaSans-Bold.eot') format('embedded-opentype'),
+  url('../../src/fonts/AlegreyaSans-Bold.woff2') format('woff2'),
+  url('../../src/fonts/AlegreyaSans-Bold.woff') format('woff'),
+  url('../../src/fonts/AlegreyaSans-Bold.ttf') format('truetype');
+}
+
+/*......... Fonts AlegreyaSansMedium..........*/
+@font-face {
+  font-family: 'AlegreyaSansMedium';
+  src: url('../../src/fonts/AlegreyaSans-Medium.eot');
+  src: url('../../src/fonts/AlegreyaSans-Medium.eot') format('embedded-opentype'),
+  url('../../src/fonts/AlegreyaSans-Medium.woff2') format('woff2'),
+  url('../../src/fonts/AlegreyaSans-Medium.woff') format('woff'),
+  url('../../src/fonts/AlegreyaSans-Medium.ttf') format('truetype');
+}
+
+/*......... Fonts AlegreyaSansRegular..........*/
+@font-face {
+  font-family: 'AlegreyaSansRegular';
+  src: url('../../src/fonts/AlegreyaSans-Regular.eot');
+  src: url('../../src/fonts/AlegreyaSans-Regular.eot') format('embedded-opentype'),
+  url('../../src/fonts/AlegreyaSans-Regular.woff2') format('woff2'),
+  url('../../src/fonts/AlegreyaSans-Regular.woff') format('woff'),
+  url('../../src/fonts/AlegreyaSans-Regular.ttf') format('truetype');
+}
